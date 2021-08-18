@@ -1,13 +1,8 @@
 def largest_palindrome_product(x)
-	products = Array(10 ** (x - 1)...10 ** x).combination(2).map do |c|
-		c.first * c.last
-	end
+  products = Array(10**(x - 1)...10**x).combination(2).map { |c| c.first * c.last }
+  palindromes = products.select { |p| p.digits == p.digits.reverse }
 
-	palindromes = products.select do |p|
-		p.digits == p.digits.reverse
-	end
-
-	return palindromes.max
+  return palindromes.max
 end
 
 # 906609

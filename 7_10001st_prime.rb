@@ -1,7 +1,7 @@
 require 'prime'
 
 def ten_thousand_first_prime(x)
-	return Prime.take(x).last
+  return Prime.take(x).last
 end
 
 # 104743

@@ -1,10 +1,5 @@
 def sum_square_difference(x)
-	naturals = Array(1..x)
-	squares = naturals.map do |n|
-		n ** 2
-	end
-
-	return naturals.sum ** 2 - squares.sum
+  return Array(1..x).sum**2 - Array(1..x).map { |n| n**2 }.sum
 end
 
 # 25164150

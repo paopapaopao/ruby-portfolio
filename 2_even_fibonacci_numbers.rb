@@ -1,8 +1,6 @@
 def even_fibonacci_numbers(x)
   sequence = [1, 2]
-  while sequence[-1] + sequence[-2] <= x
-    sequence << sequence[-1] + sequence[-2]
-  end
+  sequence << sequence[-1] + sequence[-2] while sequence[-1] + sequence[-2] <= x
   evens = sequence.select { |n| n.even? }
 
   return evens

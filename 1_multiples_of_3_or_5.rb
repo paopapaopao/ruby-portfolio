@@ -1,7 +1,5 @@
 def multiples_of_3_or_5(x)
-  multiples = Array(3...x).select { |n| n % 3 == 0 || n % 5 == 0 }
-
-  return multiples
+  return Array(3...x).select { |n| n % 3 == 0 || n % 5 == 0 }
 end
 
 # 233168

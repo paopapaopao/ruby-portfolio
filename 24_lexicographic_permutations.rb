@@ -1,5 +1,5 @@
 def lexicographic_permutations(x)
-	return Array(0..9).permutation.to_a[x - 1].join.to_i
+  return Array(0..9).permutation.to_a[x - 1].join.to_i
 end
 
 # 2783915460

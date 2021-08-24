@@ -1,18 +1,13 @@
-def digit_fifth_powers
-	nums = []
-	Array(2...1000000).each do |i|
-		sum = 0
-		i.digits.each do |j|
-			sum += j ** 5
-		end
+def digit_fifth_powers(x)
+  nums = []
+  Array(2..354294).each do |n|
+    sum = 0
+    n.digits.each { |digit| sum += digit**x }
+    nums << n if n == sum
+  end
 
-		if i == sum
-			nums << i
-		end
-	end
-
-	return nums.sum
+  return nums.sum
 end
 
 # 443839
-p digit_fifth_powers
+p digit_fifth_powers(5)

@@ -1,11 +1,9 @@
 def champernownes_constant(x)
-	fraction = ''
-	Array(1..x).each do |i|
-		fraction.length < x ? fraction += i.to_s : break
-	end
+  fraction = ''
+  Array(1..x).each { |i| fraction.length < x ? fraction += i.to_s : break }
+  digits = fraction.split('')
 
-	digits = fraction.split('')
-	return digits[1 - 1].to_i * digits[10 - 1].to_i * digits[100 - 1].to_i * digits[1000 - 1].to_i * digits[10000 - 1].to_i * digits[100000 - 1].to_i * digits[1000000 - 1].to_i
+  return Array(0..6).map { |e| digits[10**e - 1].to_i }.reduce(:*)
 end
 
 # 210

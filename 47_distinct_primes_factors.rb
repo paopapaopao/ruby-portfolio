@@ -1,24 +1,24 @@
 require 'prime'
 
-def distinct_primes_factors(size, primes)
-	nums = []
-	first_num = 1
-	while nums.size < size
-		Array(first_num...first_num + size).each do |i|
-			if Prime.prime_division(i).size == primes
-				nums << i
-			else
-				nums.clear
+def distinct_primes_factors(x)
+  nums = []
+  first_num = 1
+  while nums.size != x
+    Array(first_num...first_num + x).each do |n|
+      if Prime.prime_division(n).size != x
+        nums.clear
 
-				break
-			end
-		end
+        break
+      end
 
-		first_num += 1
-	end
+      nums << n
+    end
 
-	return nums.first
+    first_num += 1
+  end
+
+  return nums.first
 end
 
 # 134043
-p distinct_primes_factors(4, 4)
+p distinct_primes_factors(4)
